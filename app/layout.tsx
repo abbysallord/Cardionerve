@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cardionerve.com"),
+  metadataBase: new URL("https://cardionerve.vercel.app"),
   title: "CardioNerve - Cardiac Risk Detection",
   description: "Real-time heart health monitoring with AI-powered risk assessment.",
   openGraph: {
     title: "CardioNerve - Cardiac Risk Detection",
     description: "Real-time heart health monitoring with AI-powered risk assessment.",
-    url: "https://cardionerve.com",
+    url: "https://cardionerve.vercel.app",
     siteName: "CardioNerve",
     images: [
       {
