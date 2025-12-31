@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "CardioNerve",
     images: [
       {
-        url: "/og.png",
+        url: "../public/og.png",
         width: 1200,
         height: 630,
         alt: "CardioNerve Dashboard Preview",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CardioNerve - Cardiac Risk Detection",
     description: "Real-time heart health monitoring with AI-powered risk assessment.",
-    images: ["/og.png"],
+    images: ["../public/og.png"],
   },
 };
 
