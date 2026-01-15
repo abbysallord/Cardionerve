@@ -212,12 +212,17 @@ const CardioNerveWebsite: React.FC = () => {
     <div className="min-h-screen text-foreground overflow-x-hidden relative">
       {/* Light Mode: White/Orange with Grain */}
       <div className="fixed inset-0 z-[-1] bg-[linear-gradient(-45deg,#ffffff,#fff7ed,#fed7aa,#ffffff)] dark:hidden" />
-      <div className="fixed inset-0 z-[-1] opacity-40 mix-blend-multiply pointer-events-none dark:hidden"
-             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")` }} 
+      
+      {/* Global Grain Overlay - visible in both modes */}
+      <div className="fixed inset-0 z-[-1] opacity-30 mix-blend-multiply dark:mix-blend-soft-light dark:opacity-60 pointer-events-none"
+             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")` }} 
       />
 
       {/* Dark Mode: Black/Green */}
       <div className="fixed inset-0 z-[-1] bg-[linear-gradient(-45deg,#000000,#072a27,#022c22,#000000)] hidden dark:block" />
+
+      {/* Bottom Glassmorphism Blur Effect */}
+      <div className="fixed bottom-0 left-0 right-0 h-32 z-40 pointer-events-none backdrop-blur-[8px] [mask-image:linear-gradient(to_top,black,transparent)]" />
 
       {/* Navigation */}
       <Navbar>
