@@ -419,11 +419,11 @@ const CardioNerveWebsite: React.FC = () => {
             className="mt-20 grid gap-8 md:grid-cols-3"
           >
             <div className="text-center">
-              <div className="mb-2 text-5xl font-bold text-primary">10K+</div>
+              <div className="mb-2 text-5xl font-bold text-primary">99+</div>
               <div className="text-muted-foreground">Active Users</div>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-5xl font-bold text-primary">99.9%</div>
+              <div className="mb-2 text-5xl font-bold text-primary">91.3%</div>
               <div className="text-muted-foreground">Uptime</div>
             </div>
             <div className="text-center">
