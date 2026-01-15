@@ -365,8 +365,8 @@ const CardioNerveWebsite: React.FC = () => {
           >
 
 
-            <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-              Cardiac Risk Detection{" "}
+            <h1 style={{ fontFamily: "Garamond, serif" }} className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+              Cardiac Risk Detection{" "}<br />
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 at Your Fingertips
               </span>
@@ -426,7 +426,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-24 text-center"
           >
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-4 text-4xl font-bold md:text-5xl">
               Comprehensive Cardiac Monitoring
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -495,7 +495,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-4 text-4xl font-bold md:text-5xl">
               Getting Started is Easy
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -544,7 +544,7 @@ const CardioNerveWebsite: React.FC = () => {
             className="mx-auto max-w-4xl text-center"
           >
 
-            <h2 className="mb-16 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-16 text-4xl font-bold md:text-5xl">
               Security & Privacy First
             </h2>
             
@@ -616,7 +616,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-4xl text-center"
           >
-            <h2 className="mb-6 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-6 text-4xl font-bold md:text-5xl">
               Join Thousands of Users Who Trust CardioNerve
             </h2>
             <p className="mb-10 text-lg text-muted-foreground md:text-xl">
@@ -643,7 +643,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-4 text-4xl font-bold md:text-5xl">
               Frequently Asked Questions
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -736,7 +736,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center"
           >
-            <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h2 style={{ fontFamily: "Garamond, serif" }} className="mb-4 text-4xl font-bold md:text-5xl">
               Get in Touch
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
