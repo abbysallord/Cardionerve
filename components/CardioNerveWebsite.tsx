@@ -994,12 +994,12 @@ const CardioNerveWebsite: React.FC = () => {
               <h4 className="mb-4 font-semibold">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="https://www.linkedin.com/company/cardionerve/posts/?feedView=all" className="hover:text-primary transition-colors">
+                  <a href="https://www.linkedin.com/company/cardionerve/posts/?feedView=all" target="_blank" className="hover:text-primary transition-colors">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/cardionerve.co/" className="hover:text-primary transition-colors">
+                  <a href="https://www.instagram.com/cardionerve.co/" target="_blank" className="hover:text-primary transition-colors">
                     Instagram
                   </a>
                 </li>
