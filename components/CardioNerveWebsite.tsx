@@ -711,7 +711,7 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Email</div>
                         <div className="text-muted-foreground">
-                          support@cardionerve.com
+                          cardionerve.com@proton.me
                         </div>
                       </div>
                     </div>
@@ -721,7 +721,7 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Phone</div>
                         <div className="text-muted-foreground">
-                          +1 (555) 123-4567
+                          +91 6360869590
                         </div>
                       </div>
                     </div>
@@ -731,9 +731,9 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Address</div>
                         <div className="text-muted-foreground">
-                          123 Health Tech Drive
+                          Mangalore
                           <br />
-                          San Francisco, CA 94105
+                          Karnataka, India
                         </div>
                       </div>
                     </div>
