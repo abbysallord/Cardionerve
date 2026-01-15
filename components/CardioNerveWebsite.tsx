@@ -211,13 +211,13 @@ const CardioNerveWebsite: React.FC = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden relative">
       {/* Light Mode: White/Orange with Grain */}
-      <div className="fixed inset-0 z-[-1] animate-gradient bg-[linear-gradient(-45deg,#ffffff,#fff7ed,#fed7aa,#ffffff)] dark:hidden" />
+      <div className="fixed inset-0 z-[-1] bg-[linear-gradient(-45deg,#ffffff,#fff7ed,#fed7aa,#ffffff)] dark:hidden" />
       <div className="fixed inset-0 z-[-1] opacity-40 mix-blend-multiply pointer-events-none dark:hidden"
              style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")` }} 
       />
 
       {/* Dark Mode: Black/Green */}
-      <div className="fixed inset-0 z-[-1] animate-gradient bg-[linear-gradient(-45deg,#000000,#072a27,#022c22,#000000)] hidden dark:block" />
+      <div className="fixed inset-0 z-[-1] bg-[linear-gradient(-45deg,#000000,#072a27,#022c22,#000000)] hidden dark:block" />
 
       {/* Navigation */}
       <Navbar>
