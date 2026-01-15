@@ -209,7 +209,16 @@ const CardioNerveWebsite: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground overflow-x-hidden relative">
+      {/* Light Mode: White/Orange with Grain */}
+      <div className="fixed inset-0 z-[-1] animate-gradient bg-[linear-gradient(-45deg,#ffffff,#fff7ed,#fed7aa,#ffffff)] dark:hidden" />
+      <div className="fixed inset-0 z-[-1] opacity-40 mix-blend-multiply pointer-events-none dark:hidden"
+             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")` }} 
+      />
+
+      {/* Dark Mode: Black/Green */}
+      <div className="fixed inset-0 z-[-1] animate-gradient bg-[linear-gradient(-45deg,#000000,#072a27,#022c22,#000000)] hidden dark:block" />
+
       {/* Navigation */}
       <Navbar>
         <NavBody>
@@ -337,8 +346,7 @@ const CardioNerveWebsite: React.FC = () => {
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary-rgb,59,130,246),0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-transparent" />
 
         <motion.div
           style={{ opacity: heroOpacity, scale: heroScale }}
@@ -404,7 +412,7 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 pb-12 md:py-32 md:pb-16 bg-muted/30">
+      <section id="features" className="py-24 pb-12 md:py-32 md:pb-16 bg-transparent">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -521,7 +529,7 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* Security & Privacy Section */}
-      <section id="privacy" className="pt-12 pb-20 md:pt-16 md:pb-24 bg-muted/30">
+      <section id="privacy" className="pt-12 pb-20 md:pt-16 md:pb-24 bg-transparent">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -594,7 +602,7 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+      <section className="py-24 md:py-32 bg-transparent">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -714,7 +722,7 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 md:py-32 bg-muted/30">
+      <section id="contact" className="py-24 md:py-32 bg-transparent">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -915,7 +923,7 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 bg-muted/50 py-12">
+      <footer className="border-t border-border/50 bg-transparent py-12">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div>
