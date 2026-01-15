@@ -19,6 +19,7 @@ import {
   Shield,
   Lock,
   Clock,
+  Loader2,
 } from "lucide-react";
 import { useTheme } from "./next-themes";
 import { Button } from "@/components/ui/button";
@@ -84,6 +85,7 @@ interface StepCardProps {
   title: string;
   description: string;
   delay?: number;
+  isLast?: boolean;
 }
 
 const StepCard: React.FC<StepCardProps> = ({
@@ -91,6 +93,7 @@ const StepCard: React.FC<StepCardProps> = ({
   title,
   description,
   delay = 0,
+  isLast = false,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -104,10 +107,16 @@ const StepCard: React.FC<StepCardProps> = ({
       className="relative flex gap-6"
     >
       <div className="flex flex-col items-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground shadow-lg">
+        <div className="z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground shadow-lg">
           {number}
         </div>
-        <div className="mt-4 h-full w-0.5 bg-gradient-to-b from-primary to-transparent" />
+        <div 
+          className={`-mt-1 h-full w-1 ${
+            isLast 
+              ? "bg-gradient-to-b from-primary to-transparent" 
+              : "bg-primary"
+          }`} 
+        />
       </div>
       <div className="flex-1 pb-12">
         <h3 className="mb-2 text-xl font-semibold text-foreground">{title}</h3>
@@ -126,6 +135,8 @@ const CardioNerveWebsite: React.FC = () => {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const { theme, setTheme } = useTheme();
 
   const heroRef = useRef(null);
@@ -153,13 +164,43 @@ const CardioNerveWebsite: React.FC = () => {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setFormSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        
+        // Wait 1 second to show the "Sent!" button state
+        setTimeout(() => {
+          setFormSubmitted(true);
+          setIsSuccess(false);
+          
+          // Reset form data and view after showing "Message Sent!" card for 3 seconds
+          setTimeout(() => {
+            setFormData({ name: "", email: "", message: "" });
+            setFormSubmitted(false);
+          }, 3000);
+        }, 1000);
+      } else {
+        setIsSubmitting(false);
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setIsSubmitting(false);
+      alert("An error occurred. Please try again later.");
+    }
   };
 
   const navLinks = [
@@ -476,27 +517,28 @@ const CardioNerveWebsite: React.FC = () => {
               title="Receive Alerts"
               description="Receive instant notifications for any concerns. Stay informed and take action when it matters most."
               delay={0.4}
+              isLast={true}
             />
           </div>
         </div>
       </section>
 
       {/* Security & Privacy Section */}
-      <section id="privacy" className="pt-12 pb-32 md:pt-16 md:pb-48 bg-muted/30">
+      <section id="privacy" className="pt-12 pb-20 md:pt-16 md:pb-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-4xl text-center flex flex-col justify-between min-h-[60vh]"
+            className="mx-auto max-w-4xl text-center"
           >
 
-            <h2 className="mb-10 text-4xl font-bold md:text-5xl">
+            <h2 className="mb-16 text-4xl font-bold md:text-5xl">
               Security & Privacy First
             </h2>
             
-            <div className="mt-auto">
+            <div>
               <p className="mb-12 text-lg text-muted-foreground leading-relaxed">
                 We take your privacy seriously. All data is encrypted,
                 HIPAA-compliant, and you maintain full control over your
@@ -721,8 +763,8 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Phone</div>
                         <div className="text-muted-foreground">
-                          +91 6360869590 - Dhanush Shenoy H
-                          +91 8296102292 - Anand Mahadev
+                          +91 6360869590 <br />
+                          +91 8296102292
                         </div>
                       </div>
                     </div>
@@ -844,10 +886,27 @@ const CardioNerveWebsite: React.FC = () => {
 
                       <Button
                         type="submit"
-                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                        disabled={isSubmitting || isSuccess}
+                        className={`w-full text-primary-foreground transition-all duration-300 ${
+                          isSuccess
+                            ? "bg-green-600 hover:bg-green-700"
+                            : "bg-primary hover:bg-primary/90"
+                        }`}
                         size="lg"
                       >
-                        Send Message
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            Sending...
+                          </>
+                        ) : isSuccess ? (
+                          <>
+                            <CheckCircle2 className="mr-2 h-5 w-5" />
+                            Sent!
+                          </>
+                        ) : (
+                          "Send Message"
+                        )}
                       </Button>
                     </form>
                   )}
