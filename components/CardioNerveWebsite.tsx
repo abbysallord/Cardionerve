@@ -711,7 +711,7 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Email</div>
                         <div className="text-muted-foreground">
-                          cardionerve.com@proton.me
+                          cardionerve.co@gmail.com
                         </div>
                       </div>
                     </div>
@@ -721,7 +721,8 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Phone</div>
                         <div className="text-muted-foreground">
-                          +91 6360869590
+                          +91 6360869590 - Dhanush Shenoy H
+                          +91 8296102292 - Anand Mahadev
                         </div>
                       </div>
                     </div>
@@ -731,9 +732,7 @@ const CardioNerveWebsite: React.FC = () => {
                       <div>
                         <div className="font-semibold">Address</div>
                         <div className="text-muted-foreground">
-                          Mangalore
-                          <br />
-                          Karnataka, India
+                          Mangalore, Karnataka, India
                         </div>
                       </div>
                     </div>
@@ -936,18 +935,13 @@ const CardioNerveWebsite: React.FC = () => {
               <h4 className="mb-4 font-semibold">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="https://www.linkedin.com/company/cardionerve/posts/?feedView=all" className="hover:text-primary transition-colors">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Facebook
+                  <a href="https://www.instagram.com/cardionerve.co/" className="hover:text-primary transition-colors">
+                    Instagram
                   </a>
                 </li>
               </ul>
