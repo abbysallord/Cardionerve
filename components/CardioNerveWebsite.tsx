@@ -408,14 +408,14 @@ const CardioNerveWebsite: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 md:py-32 bg-muted/30">
+      <section id="features" className="py-24 pb-12 md:py-32 md:pb-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16 text-center"
+            className="mb-24 text-center"
           >
             <h2 className="mb-4 text-4xl font-bold md:text-5xl">
               Comprehensive Cardiac Monitoring
@@ -460,7 +460,7 @@ const CardioNerveWebsite: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-20 grid gap-8 md:grid-cols-3"
           >
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="mb-2 text-5xl font-bold text-primary">99+</div>
               <div className="text-muted-foreground">Active Users</div>
             </div>
@@ -471,7 +471,7 @@ const CardioNerveWebsite: React.FC = () => {
             <div className="text-center">
               <div className="mb-2 text-5xl font-bold text-primary">24/7</div>
               <div className="text-muted-foreground">Monitoring</div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
