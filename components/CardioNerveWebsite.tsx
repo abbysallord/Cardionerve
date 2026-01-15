@@ -111,13 +111,9 @@ const StepCard: React.FC<StepCardProps> = ({
         <div className="z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary text-2xl font-bold text-primary-foreground shadow-lg">
           {number}
         </div>
-        <div 
-          className={`-mt-1 h-full w-1 ${
-            isLast 
-              ? "bg-gradient-to-b from-primary to-transparent" 
-              : "bg-primary"
-          }`} 
-        />
+        {!isLast && (
+          <div className="-mt-1 h-full w-1 bg-primary" />
+        )}
       </div>
       <div className="flex-1 pb-12">
         <h3 className="mb-2 text-xl font-semibold text-foreground">{title}</h3>
